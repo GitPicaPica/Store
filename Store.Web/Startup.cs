@@ -28,9 +28,11 @@ namespace Store.Web
         {
             services.AddDbContext<DataContext>(cfg =>
             {
+              
 
                 cfg.UseSqlServer(Configuration.GetConnectionString("ProductConnection"));
             });
+            services.AddTransient<SeeDb>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
